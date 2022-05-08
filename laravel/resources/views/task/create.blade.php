@@ -32,27 +32,31 @@
                                         type="text" name="name"></label></li>
                             <li class="item"><p class="title">Ссылка</p>
                                 <p class="post-title">Ссылка, необходимая для выполнения задания.</p><label><input
-                                        type="text" placeholder="https://" name="link"></label> <label for="task_no_show_link"
-                                                                                           style="cursor: pointer;font-size: 14px;"><input
+                                        type="text" placeholder="https://" name="link"></label>
+<!--                                <label for="task_no_show_link"
+                                                                                           style="cursor: pointer;font-size: 14px;">
+                                    <input
                                         type="checkbox" name="task_no_show_link" value="1" id="task_no_show_link"
                                         placeholder=""> Скрывать ссылку до взятия в работу исполнителем + запретить переход
-                                    по клику</label></li>
+                                    по клику</label></li>-->
                             <li class="item"><p class="title">Задание</p>
                                 <p class="post-title">Подробно и понятно опишите, что и где именно должен сделать
                                     исполнитель</p><label for="1"><textarea class="textarea" id="1"
                                                                             cols="30" rows="10" name="description"></textarea></label></li>
+
                             <li class="item"><p class="title">Что нужно для отчёта</p>
                                 <p class="post-title">Опишите, что нужно предоставить исполнителю в отчёте.<br>Если требуете
                                     скриншот, обязательно отметьте соответствующую галочку ниже.</p><label for="2"><textarea
-                                        name="confirmation" class="textarea" id="2" cols="30" rows="10"></textarea></label></li>
+                                        name="reportDescription" class="textarea" id="2" cols="30" rows="10"></textarea></label></li>
                             <li class="item"><p class="title">Тариф</p><label><select class="select">
                                         <option class="option">-Лайки- 1р</option>
                                     </select></label></li>
                             <li class="item"><p class="title">Тариф</p>
                                 <p class="post-title">Сколько вы готовы платить за 1 выполнение задания. Не может быть
-                                    меньше значения по тарифу.</p><label><input type="text" value="1"></label> <label
-                                    for="task_no_show_link2" style="cursor: pointer;font-size: 14px;"><input
-                                        type="checkbox" name="task_no_show_link" value="1" id="task_no_show_link2"
+                                    меньше значения по тарифу.</p><label><input type="text" name="rate"></label> <label
+                                    for="task_no_show_link2" style="cursor: pointer;font-size: 14px;">
+
+                                    <input type="checkbox" name="task_no_show_link" value="1" id="task_no_show_link2"
                                         placeholder=""> Требовать от исполнителя скриншот (+1 руб)</label></li>
                         </ul>
                         <a href="#">

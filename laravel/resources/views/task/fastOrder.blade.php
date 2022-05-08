@@ -25,27 +25,27 @@
         <div class="container">
             <div class="content"><p class="title">Что хотите заказать?</p>
                 <div class="navigation">Мои заказы > Добавить заказ</div>
-                <ul class="list"><a href="#">
+                <ul class="list"><a href="{{route('task.create')}}">
                         <li class="item">
                             <div class="leftSide"><img src="https://unu.im/i/conversation.svg" alt="#"></div>
                             <div class="rightSide"><span>Комментарии</span>, отзывы, наполнение форумов</div>
                         </li>
-                    </a><a href="#">
+                    </a><a href="{{route('task.create')}}">
                         <li class="item">
                             <div class="leftSide"><img src="https://unu.im/i/rotation.svg" alt="#"></div>
                             <div class="rightSide"><span>Подписчики / фолловеры</span> в социальных сетях</div>
                         </li>
-                    </a><a href="#">
+                    </a><a href="{{route('task.create')}}">
                         <li class="item">
                             <div class="leftSide"><img src="https://unu.im/i/like2.svg" alt="#"></div>
                             <div class="rightSide"><span>Лайки, репосты,</span> голосование, активность</div>
                         </li>
-                    </a><a href="#">
+                    </a><a href="{{route('task.create')}}">
                         <li class="item">
                             <div class="leftSide"><img src="https://unu.im/i/like2.svg" alt="#"></div>
                             <div class="rightSide"><span>Лайки, репосты,</span> голосование, активность</div>
                         </li>
-                    </a><a href="#">
+                    </a><a href="{{route('task.create')}}">
                         <li class="item">
                             <div class="leftSide"><img src="https://unu.im/i/like2.svg" alt="#"></div>
                             <div class="rightSide"><span>Лайки, репосты,</span> голосование, активность</div>

@@ -17,10 +17,17 @@ class TaskController extends Controller
     }
     public function store(Request $request)
     {
+       // dd($request);
         Task::create([
             'name' => $request->name,
+            'link' => $request->link,
             'description' => $request->description,
-            'description' => $request->descriptionj,
+            'reportDescription' => $request->reportDescription,
+            'rate' => $request->rate,
+            'click_count' => 0,
+
+
         ]);
+        return redirect()->back();
     }
 }
