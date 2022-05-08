@@ -37,14 +37,17 @@
                                 <a href="{{route('register')}}">
                                     <li class="btn-item-white">Заказчику</li>
                                 </a>
+                                <a href="{{route('register')}}">
+                                    <li class="btn-item">Исполнителю</li>
+                                </a></ul>
                             @else
                                 <a href="{{route('customer.profile')}}">
                                     <li class="btn-item-white">Заказчику</li>
                                 </a>
-                            @endif
-                            <a href="#">
-                                <li class="btn-item">Исполнителю</li>
-                            </a></ul>
+                                <a href="{{route('task.search')}}">
+                                    <li class="btn-item">Исполнителю</li>
+                                </a></ul>
+                        @endif
                     </div>
                 </div>
                 <div class="rightSide">

@@ -30,4 +30,11 @@ class TaskController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function search()
+    {
+        $tasks = Task::all();
+        return view('task.search', compact('tasks'));
+
+    }
 }
