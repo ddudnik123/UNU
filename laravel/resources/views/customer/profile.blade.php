@@ -5,7 +5,8 @@
 @section('body')
     <div class="headerAdmin">
         <div class="container">
-            <div class="leftSide"><a href="/">
+            <div class="leftSide">
+                <a href="/">
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo1.svg" alt="#"></div>
                 </a></div>
             <div class="rightSide">

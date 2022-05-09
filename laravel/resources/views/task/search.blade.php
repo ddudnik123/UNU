@@ -9,7 +9,7 @@
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo1.svg" alt="#"></div>
                 </a></div>
             <div class="rightSide">
-                <ul class="list"><a href="#">
+                <ul class="list"><a href="{{route('task.fastOrder')}}">
                         <li class="item">Добавить заказ</li>
                     </a><a href="#">
                         <li class="item">Мои заказы</li>
@@ -54,7 +54,8 @@
                 <div class="leftSide">
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo3-1.svg" alt="#"></div>
                     <div class="lists">
-                        <ul class="list"><a href="#">
+                        <ul class="list">
+                            <a href="{{route('customer.profile')}}">
                                 <li class="item">Мой кабинет</li>
                             </a><a href="#">
                                 <li class="item">Контакты</li>

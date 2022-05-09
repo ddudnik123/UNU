@@ -16,12 +16,13 @@
                         </a>
                     @else
                         <li> {{$user->name}}</li>
-                        <form action="{{ route('logout') }}" method="post" >
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <li>
-                                <button class="" style="background:rgba(1,1,1,0);  cursor:pointer; color:white; font-size: 1em; border-color:rgba(1,1,1,0);"
-                                type="submit">
-                                <span >&nbsp&nbspвыход</span>
+                                <button class=""
+                                        style="background:rgba(1,1,1,0);  cursor:pointer; color:white; font-size: 1em; border-color:rgba(1,1,1,0);"
+                                        type="submit">
+                                    <span>&nbsp&nbspвыход</span>
                                 </button>
                             </li>
                         </form>
@@ -40,13 +41,13 @@
                                 <a href="{{route('register')}}">
                                     <li class="btn-item">Исполнителю</li>
                                 </a></ul>
-                            @else
-                                <a href="{{route('customer.profile')}}">
-                                    <li class="btn-item-white">Заказчику</li>
-                                </a>
-                                <a href="{{route('task.search')}}">
-                                    <li class="btn-item">Исполнителю</li>
-                                </a></ul>
+                        @else
+                            <a href="{{route('customer.profile')}}">
+                                <li class="btn-item-white">Заказчику</li>
+                            </a>
+                            <a href="{{route('task.search')}}">
+                                <li class="btn-item">Исполнителю</li>
+                            </a></ul>
                         @endif
                     </div>
                 </div>
@@ -116,7 +117,8 @@
                     <ul class="list"><a href="#">
                             <li class="item">Низкие цены — от 1 руб за выполнение самого простого задания</li>
                         </a><a href="#">
-                            <li class="item">Только живые люди: наши исполнители не роботы, каждый из них прошёл верификацию
+                            <li class="item">Только живые люди: наши исполнители не роботы, каждый из них прошёл
+                                верификацию
                             </li>
                         </a><a href="#">
                             <li class="item">Скорость: возможность получать сотни и даже тысячи выполнений в сутки</li>
@@ -126,13 +128,16 @@
                 </div>
                 <div class="leftSide"><p class="title">Исполнителю</p>
                     <ul class="list"><a href="#">
-                            <li class="item">Делитесь постами, ставьте «лайки», вступайте в группы в социальных сетях</li>
+                            <li class="item">Делитесь постами, ставьте «лайки», вступайте в группы в социальных сетях
+                            </li>
                         </a><a href="#">
-                            <li class="item">Зарабатывайте на заданиях биржи комментариев, комментируя материалы на сайтах и
+                            <li class="item">Зарабатывайте на заданиях биржи комментариев, комментируя материалы на
+                                сайтах и
                                 публикуя контент
                             </li>
                         </a><a href="#">
-                            <li class="item">Зарабатывайте, общаясь на форумах, просматривая видео или устанавливая приложения
+                            <li class="item">Зарабатывайте, общаясь на форумах, просматривая видео или устанавливая
+                                приложения
                             </li>
                         </a><a href="#">
                             <li class="item">Работайте в любое удобное время</li>
@@ -142,7 +147,11 @@
         </div>
     </div>
     <div class="services">
-        <button>Начать работу</button>
+        @if(!$user)
+            <button><a style="color:white;" href="{{route('register')}}">Начать работу</a></button>
+        @else
+            <button><a style="color:white;" href="{{route('task.search')}}">Начать работу</a></button>
+        @endif
         <a href="#"><p>Полный список услуг</p></a></div>
     <footer class="footer">
         <div class="container">
@@ -150,9 +159,14 @@
                 <div class="leftSide">
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo3-1.svg" alt="#"></div>
                     <div class="lists">
-                        <ul class="list"><a href="#">
-                                <li class="item">Мой кабинет</li>
-                            </a><a href="#">
+                        <ul class="list">
+                            @if(!$user)
+                                <a href="{{route('login')}}"><li class="item">Мой кабинет</li></a>
+                            @else
+                                <a href="{{route('customer.profile')}}"><li class="item">Мой кабинет</li></a>
+                            @endif
+
+                            <a href="#">
                                 <li class="item">Контакты</li>
                             </a><a href="#">
                                 <li class="item">Служба поддержки</li>
@@ -177,7 +191,8 @@
                 </div>
             </div>
             <div class="bottom"><p>© unu.im. Сайт может содержать материалы для лиц старше 18 лет.</p>
-                <p>Используя сайт вы полностью и безоговорочно принимаете оферту и политику обработки персональных данных.
+                <p>Используя сайт вы полностью и безоговорочно принимаете оферту и политику обработки персональных
+                    данных.
                     Точка №777: 0.002035</p></div>
         </div>
 @endsection
