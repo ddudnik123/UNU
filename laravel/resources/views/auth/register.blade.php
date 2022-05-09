@@ -1,7 +1,5 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
+<!--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +71,47 @@
             </div>
         </div>
     </div>
+</div>-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>unu.im</title></head>
+<body>
+<div class="register">
+    <div class="container">
+        <div class="content">
+            <div class="top"><p>Регистрация</p></div>
+            <div class="bottom">
+                <form method="post" action="{{route('register')}}">
+                    @csrf
+                    <label for="email"><p class="email-txt">Введите email</p>
+                        <input type="text" name="email" id="email"></label>
+
+                    <label for="name"><p class="email-txt">Введите своё имя</p>
+                        <input type="text" name="name" id="name"></label>
+
+                    <label for="pass"><p class="email-txt">Введите свой пароль</p>
+                        <input type="password" name="password" id="pass"></label>
+
+                    <label for="passW"><p class="email-txt">Введите свой пароль ещё раз</p>
+                        <input type="password" name="password_confirmation" id="passW"></label>
+
+                        <button class="btn-next" type="submit">Далее</button>
+                        <p class="offer">Регистрируясь, вы принимаете Договор-оферту</p>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-@endsection
+</body>
+</html>
+
+
