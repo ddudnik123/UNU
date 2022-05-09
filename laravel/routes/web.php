@@ -28,6 +28,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::prefix('customer')->group(function () {
     //Route::get('create', [UserController::class, 'index'])->name('customer.index');
     Route::get('profile', [CustomerController::class, 'profile'])->name('customer.profile');
+    Route::get('orders/{user}', [CustomerController::class, 'orders'])->name('customer.orders');
 });
 
 

@@ -11,7 +11,7 @@
             <div class="rightSide">
                 <ul class="list"><a href="{{route('task.fastOrder')}}">
                         <li class="item">Добавить заказ</li>
-                    </a><a href="#">
+                    </a><a href="{{route('customer.orders', $user->id)}}">
                         <li class="item">Мои заказы</li>
                     </a><a href="#">
                         <li class="item">Сообщения</li>
@@ -40,7 +40,7 @@
                             <div class="cell">{{$task->name}}</div>
                             <div class="cell">тип</div>
                             <div class="cell">{{$task->rate}}</div>
-                            <div class="cell"><a href="#">клиент</a></div>
+                            <div class="cell"><a href="#">{{$task->customer->name}}</a></div>
                         </li>
                         @endforeach
                     </ul>

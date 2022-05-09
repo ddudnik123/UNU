@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Task::class);
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Task::class, 'customer_id');
+    }
 }

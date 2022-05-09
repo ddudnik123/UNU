@@ -11,10 +11,8 @@
                 </a></div>
             <div class="rightSide">
                 <ul class="list">
-                    <a href="{{route('task.fastOrder')}}">
-                        <li class="item">Добавить заказ</li>
-                    </a><a href="#">
-                        <li class="item">Мои заказы</li>
+                    <a href="{{route('task.fastOrder')}}"><li class="item">Добавить заказ</li></a>
+                    <a href="{{route('customer.orders', $user->id)}}"><li class="item">Мои заказы</li>
                     </a><a href="#">
                         <li class="item">Сообщения</li>
                     </a><a href="#">
@@ -28,12 +26,15 @@
             <div class="content"><p class="title">Личный кабинет заказчика</p>
                 <div class="flex">
                     <div class="leftSide">
-                        <div class="personal-area-menu"><p class="name">Привет, user</p>
-                            <ul class="list"><a href="{{route('task.fastOrder')}}">
+                        <div class="personal-area-menu"><p class="name">Привет, {{$user->name}}</p>
+                            <ul class="list">
+                                <a href="{{route('task.fastOrder')}}">
                                     <li class="item">Добавить заказ</li>
-                                </a><a href="#">
+                                </a>
+                                <a href="{{route('customer.orders', $user->id)}}">
                                     <li class="item">Мои заказы</li>
-                                </a><a href="#">
+                                </a>
+                                <a href="#">
                                     <li class="item">Списки исполнителей</li>
                                 </a><a href="#">
                                     <li class="item">Моя страница</li>
