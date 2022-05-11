@@ -62,6 +62,7 @@
                         <a href="#">
                             <button class="btn-create" type="submit">Создать</button>
                         </a></div>
+                    <input type="hidden" name="categorie_id" value="{{$categorie->id}}">
                 </div>
             </div>
         </div>

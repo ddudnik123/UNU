@@ -34,7 +34,7 @@ Route::prefix('customer')->group(function () {
 
 Route::prefix('task')->group(function () {
     Route::get('fast-order', [TaskController::class, 'fastOrder'])->name('task.fastOrder');
-    Route::get('create', [TaskController::class, 'create'])->name('task.create');
+    Route::get('create/{categorie}', [TaskController::class, 'create'])->name('task.create');
     Route::get('store', [TaskController::class, 'store'])->name('task.store');
     Route::get('search', [TaskController::class, 'search'])->name('task.search');
 });

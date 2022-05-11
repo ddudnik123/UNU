@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -9,16 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
-    public function create()
+    public function create(Categorie $categorie)
     {
         $user = Auth::user();
-        return view('task.create', compact('user'));
+        return view('task.create', compact('user', 'categorie'));
     }
 
     public function fastOrder()
     {
         $user = Auth::user();
-        return view('task.fastOrder', compact('user'));
+        $categories = Categorie::all();
+        return view('task.fastOrder', compact('user', 'categories'));
     }
 
     public function store(Request $request)
@@ -32,6 +34,7 @@ class TaskController extends Controller
             'rate' => $request->rate,
             'click_count' => 0,
             'customer_id' => $uid,
+            'categorie_id' => $request->categorie_id,
         ]);
         return redirect()->back();
     }

@@ -25,32 +25,18 @@
         <div class="container">
             <div class="content"><p class="title">Что хотите заказать?</p>
                 <div class="navigation">Мои заказы > Добавить заказ</div>
-                <ul class="list"><a href="{{route('task.create')}}">
-                        <li class="item">
-                            <div class="leftSide"><img src="https://unu.im/i/conversation.svg" alt="#"></div>
-                            <div class="rightSide"><span>Комментарии</span>, отзывы, наполнение форумов</div>
-                        </li>
-                    </a><a href="{{route('task.create')}}">
-                        <li class="item">
-                            <div class="leftSide"><img src="https://unu.im/i/rotation.svg" alt="#"></div>
-                            <div class="rightSide"><span>Подписчики / фолловеры</span> в социальных сетях</div>
-                        </li>
-                    </a><a href="{{route('task.create')}}">
-                        <li class="item">
-                            <div class="leftSide"><img src="https://unu.im/i/like2.svg" alt="#"></div>
-                            <div class="rightSide"><span>Лайки, репосты,</span> голосование, активность</div>
-                        </li>
-                    </a><a href="{{route('task.create')}}">
-                        <li class="item">
-                            <div class="leftSide"><img src="https://unu.im/i/like2.svg" alt="#"></div>
-                            <div class="rightSide"><span>Лайки, репосты,</span> голосование, активность</div>
-                        </li>
-                    </a><a href="{{route('task.create')}}">
-                        <li class="item">
-                            <div class="leftSide"><img src="https://unu.im/i/like2.svg" alt="#"></div>
-                            <div class="rightSide"><span>Лайки, репосты,</span> голосование, активность</div>
-                        </li>
-                    </a></ul>
+                <ul class="list">
+                    @foreach($categories as $categorie)
+                        <a href="{{route('task.create', $categorie->id)}}">
+                            <li class="item">
+                                <div class="leftSide"><img src="{{$categorie->im_url}}" alt="#"></div>
+                                <div class="rightSide"><span>{{$categorie->name}}</span>{{$categorie->description}}</div>
+                            </li>
+                        </a>
+
+                        @endforeach
+
+                    </ul>
             </div>
         </div>
     </div>
