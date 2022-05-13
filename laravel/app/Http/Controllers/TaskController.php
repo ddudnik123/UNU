@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskStoreRequest;
 use App\Models\Categorie;
 use App\Models\Task;
 use App\Models\User;
@@ -23,7 +24,7 @@ class TaskController extends Controller
         return view('task.fastOrder', compact('user', 'categories'));
     }
 
-    public function store(Request $request)
+    public function store(TaskStoreRequest $request)
     {
         $uid = Auth::user()->id;
         Task::create([
