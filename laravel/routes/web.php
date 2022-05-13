@@ -24,15 +24,14 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
-
-Route::prefix('customer')->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('customer')->group(function () {
     //Route::get('create', [UserController::class, 'index'])->name('customer.index');
     Route::get('profile', [CustomerController::class, 'profile'])->name('customer.profile');
     Route::get('orders/{user}', [CustomerController::class, 'orders'])->name('customer.orders');
 });
 
 
-Route::prefix('task')->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('task')->group(function () {
     Route::get('fast-order', [TaskController::class, 'fastOrder'])->name('task.fastOrder');
     Route::get('create/{categorie}', [TaskController::class, 'create'])->name('task.create');
     Route::get('store', [TaskController::class, 'store'])->name('task.store');
