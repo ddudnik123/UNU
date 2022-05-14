@@ -39,6 +39,7 @@ Route::middleware(['auth', 'verified'])->prefix('task')->group(function () {
 });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/test', [HomeController::class, 'test']);
 require __DIR__.'/auth.php';
 
 Auth::routes();

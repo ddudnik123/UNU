@@ -19,6 +19,16 @@
             <div class="bottom">
                 <form method="post" action="{{ route('login') }}">
                     @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible">
+                            <ul class="list-unstyled">
+                                @foreach($errors->all() as $error)
+                                    <li><i style="color:red"></i> {{$error}} </li>
+                                @endforeach
+
+                            </ul>
+                        </div>
+                    @endif
                     <label for="email"><p class="email-txt">Введите имя или email</p>
                         <input type="text" name="email" id="email">
                     </label>
