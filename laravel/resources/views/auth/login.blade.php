@@ -1,16 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/app.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
-    <title>unu.im</title></head>
-<body>
+@extends('adminlte::page')
+@section('css')
+    <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
+@endsection
+@section('body')
 <div></div>
 <div class="register auth">
     <div class="container">
@@ -20,10 +12,10 @@
                 <form method="post" action="{{ route('login') }}">
                     @csrf
                     @if ($errors->any())
-                        <div class="alert alert-danger alert-dismissible">
+                        <div class="alert alert-danger alert-dismissible error">
                             <ul class="list-unstyled">
                                 @foreach($errors->all() as $error)
-                                    <li><i style="color:red"></i> {{$error}} </li>
+                                    <div class="error"><li><i style="color:red"></i> {{$error}} </li></div>
                                 @endforeach
 
                             </ul>
@@ -36,10 +28,10 @@
                         <input type="password" name="password" id="pass"></label>
                     <button class="btn-next" type="submit"> {{ __('Log in') }}</button>
                     <p class="offer">Регистрируясь, вы принимаете Договор-оферту</p>
+                    <a href="{{route('password.request')}}">Забыли пароль?</a>
                 </form>
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>
+@endsection

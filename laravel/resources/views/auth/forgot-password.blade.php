@@ -1,3 +1,8 @@
+@extends('adminlte::page')
+@section('css')
+    <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
+@endsection
+@section('body')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -34,3 +39,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+    @endsection

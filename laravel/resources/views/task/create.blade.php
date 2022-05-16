@@ -23,16 +23,20 @@
     </div>
     <form class="taskAdd" action="{{route('task.store')}}">
         <div class="container">
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible">
+           @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible error">
                     <ul class="list-unstyled">
+
                         @foreach($errors->all() as $error)
-                            <li><i style="color:red"></i> {{$error}} </li>
+
+                            <div class="error"><li><i style="color:red"></i> {{$error}} </li></div>
+
                         @endforeach
 
                     </ul>
                 </div>
             @endif
+
             <div class="content"><p class="main-title">Создать задачу</p>
                 <div class="taskAdd-wrapper">
                     <div class="leftSide">
