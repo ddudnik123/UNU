@@ -34,6 +34,15 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'email.required' => 'Введите почту',
+            'email.email' => 'Неверный формат почты',
+            'password.required' => 'Введите пароль',
+        ];
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
