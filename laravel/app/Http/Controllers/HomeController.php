@@ -32,4 +32,10 @@ class HomeController extends Controller
         return view('test',);
 
     }
+
+    public function work()
+    {
+        $user = Auth::user();
+        return view('work', compact('user'));
+    }
 }

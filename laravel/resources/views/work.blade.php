@@ -31,38 +31,17 @@
             </div>
             <div class="content">
                 <div class="leftSide"><img class="logo" src="https://unu.im/i/unu_symbol.svg" alt="#">
-                    <div class="bottom"><h1 class="title">Биржа<br>Микрозадач</h1>
-                        <p class="txt">В области крауд-маркетинга и социального продвижения.</p>
+                    <div class="bottom"><h1 class="title">
+                            Заработок на выполнении<br>заданий в интернете</h1>
+                        <p class="txt">Зарабатывайте, выполняя простые задания: написание комментариев, общение на форумах, продвижение в соц. сетях.</p>
                         <ul class="btn-list">
-                            @if(!$user)
-                                <a href="{{route('register')}}">
-                                    <li class="btn-item-white">Заказчику</li>
-                                </a>
-                                <a href="{{route('register')}}">
-                                    <li class="btn-item">Исполнителю</li>
-                                </a></ul>
-                        @else
-                            <a href="{{route('customer.profile')}}">
-                                <li class="btn-item-white">Заказчику</li>
-                            </a>
                             <a href="{{route('task.search')}}">
-                                <li class="btn-item">Исполнителю</li>
+                                <li class="btn-item-white">Поиск заказов</li>
                             </a></ul>
-                        @endif
+
                     </div>
                 </div>
-                <div class="rightSide">
-                    <ul class="list"><a href="#">
-                            <li class="item">Наполнение сайтов: комментарии, отзывы, форумы, доски объявлений</li>
-                        </a><a href="#">
-                            <li class="item">Продвижение в социальных сетях: подписчики в группы, лайки, репосты</li>
-                        </a><a href="#">
-                            <li class="item">Продвижение приложений: установки и действия</li>
-                        </a><a href="#">
-                            <li class="item">Любые произвольные задачи, которые нужно выполнять на регулярной основе
-                            </li>
-                        </a></ul>
-                </div>
+
             </div>
         </div>
     </div>
@@ -103,49 +82,14 @@
                         <li class="item">Добавляете задание и оплачиваете необходимое количество работ</li>
                         <li class="item">Получаете результат и проверяете выполненные работы</li>
                     </ul>
-                    <a href="{{route('register')}}">
-                        <div class="btn">Регестрируемся?</div>
+                    <a href="{{route('task.fastOrder')}}">
+                        <div class="btn">Начнем?</div>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="info-block">
-        <div class="container">
-            <div class="content">
-                <div class="rightSide"><p class="title">Заказчику</p>
-                    <ul class="list"><a href="#">
-                            <li class="item">Низкие цены — от 1 руб за выполнение самого простого задания</li>
-                        </a><a href="#">
-                            <li class="item">Только живые люди: наши исполнители не роботы, каждый из них прошёл
-                                верификацию
-                            </li>
-                        </a><a href="#">
-                            <li class="item">Скорость: возможность получать сотни и даже тысячи выполнений в сутки</li>
-                        </a><a href="#">
-                            <li class="item">Гарантия: вы платите только за выполненную работу</li>
-                        </a></ul>
-                </div>
-                <div class="leftSide"><p class="title">Исполнителю</p>
-                    <ul class="list"><a href="#">
-                            <li class="item">Делитесь постами, ставьте «лайки», вступайте в группы в социальных сетях
-                            </li>
-                        </a><a href="#">
-                            <li class="item">Зарабатывайте на заданиях биржи комментариев, комментируя материалы на
-                                сайтах и
-                                публикуя контент
-                            </li>
-                        </a><a href="#">
-                            <li class="item">Зарабатывайте, общаясь на форумах, просматривая видео или устанавливая
-                                приложения
-                            </li>
-                        </a><a href="#">
-                            <li class="item">Работайте в любое удобное время</li>
-                        </a></ul>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="services">
         @if(!$user)
             <button><a style="color:white;" href="{{route('register')}}">Начать работу</a></button>

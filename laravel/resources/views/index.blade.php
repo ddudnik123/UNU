@@ -45,7 +45,7 @@
                             <a href="{{route('customer.profile')}}">
                                 <li class="btn-item-white">Заказчику</li>
                             </a>
-                            <a href="{{route('task.search')}}">
+                            <a href="{{route('work')}}">
                                 <li class="btn-item">Исполнителю</li>
                             </a></ul>
                         @endif
