@@ -37,7 +37,7 @@
                         </div>
                         @foreach($tasks as $task)
                             <li class="item">
-                                <div class="cell"><a href="{{route('task.show', $task->id)}}">{{$task->name}}</div>
+                                <div class="cell"><a href="{{route('task.show', $task->id)}}">{{$task->name}}</a></div>
                                 <div class="cell">{{$task->categorie->name}}</div>
                                 <div class="cell">{{$task->rate}}</div>
                                 <div class="cell"><a href="#">{{$task->customer->name}}</a></div>
