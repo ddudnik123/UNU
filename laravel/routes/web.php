@@ -36,6 +36,8 @@ Route::middleware(['auth', 'verified'])->prefix('task')->group(function () {
     Route::get('create/{categorie}', [TaskController::class, 'create'])->name('task.create');
     Route::get('store', [TaskController::class, 'store'])->name('task.store');
     Route::get('search', [TaskController::class, 'search'])->name('task.search');
+    Route::get('show/{task}', [TaskController::class, 'show'])->name('task.show');
+    Route::get('update', [TaskController::class, 'update'])->name('task.update');
 });
 
 Route::get('/', [HomeController::class, 'index']);

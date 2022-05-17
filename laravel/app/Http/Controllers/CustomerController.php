@@ -19,6 +19,6 @@ class CustomerController extends Controller
     {
         $tasks = $user->orders;
         $user = Auth::user();
-        return view('task.search', compact('tasks', 'user'));
+        return view('customer.myOrders', compact('tasks', 'user'));
     }
 }

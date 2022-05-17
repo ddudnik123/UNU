@@ -47,5 +47,26 @@ class TaskController extends Controller
         return view('task.search', compact('tasks', 'user'));
     }
 
+    public function show(Task $task)
+    {
+        $user = Auth::user();
+        return view('task.show', compact('task', 'user'));
+    }
+
+    public function update(TaskStoreRequest $request)
+    {
+        $task = Task::findOrFail($request->task_id);
+        $task->update([
+            'name' => $request->name,
+            'link' => $request->link,
+            'description' => $request->description,
+            'reportDescription' => $request->reportDescription,
+            'rate' => $request->rate,
+            'click_count' => 0,
+            'categorie_id' => $request->categorie_id,
+        ]);
+       return redirect()->back();
+    }
+
 
 }
