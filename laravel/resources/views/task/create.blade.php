@@ -11,7 +11,7 @@
             <div class="rightSide">
                 <ul class="list"><a href="#">
                         <li class="item">Добавить заказ</li>
-                    </a><a href="#">
+                    </a><a href="{{route('customer.orders', $user->id)}}">
                         <li class="item">Мои заказы</li>
                     </a><a href="#">
                         <li class="item">Сообщения</li>
