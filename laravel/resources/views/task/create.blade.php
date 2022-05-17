@@ -68,9 +68,7 @@
                             <li class="item"><p class="title">Задание</p>
                                 <p class="post-title">Подробно и понятно опишите, что и где именно должен сделать
                                     исполнитель</p><label for="1"><textarea class="textarea" id="1"
-                                                                            cols="30" rows="10" name="description">
-
-                                    </textarea>
+                                                                            cols="30" rows="10" name="description"></textarea>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong style="color:red !important;">{{ $message }}</strong>
