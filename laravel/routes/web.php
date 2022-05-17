@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExecutorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
@@ -27,8 +28,14 @@ Route::middleware(['auth', 'verified'])->get('work', [HomeController::class, 'wo
 
 Route::middleware(['auth', 'verified'])->prefix('customer')->group(function () {
     //Route::get('create', [UserController::class, 'index'])->name('customer.index');
-    Route::get('profile', [CustomerController::class, 'profile'])->name('customer.profile');
+    Route::get('dashboard', [CustomerController::class, 'dashboard'])->name('customer.profile');
     Route::get('orders/{user}', [CustomerController::class, 'orders'])->name('customer.orders');
+});
+
+Route::middleware(['auth', 'verified'])->prefix('executor')->group(function () {
+    //Route::get('create', [UserController::class, 'index'])->name('customer.index');
+    Route::get('dashboard', [ExecutorController::class, 'dashboard'])->name('executor.dashboard');
+    //Route::get('orders/{user}', [CustomerController::class, 'orders'])->name('customer.orders');
 });
 
 

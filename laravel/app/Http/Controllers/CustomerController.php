@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Auth;
 class CustomerController extends Controller
 {
 
-    public function profile()
+    public function dashboard()
     {
         $user = Auth::user();
-        return view('customer.profile', compact('user'));
+        return view('customer.dashboard', compact('user'));
 
     }
     public function orders(User $user)

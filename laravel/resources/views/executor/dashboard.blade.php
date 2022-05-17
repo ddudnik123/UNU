@@ -1,3 +1,4 @@
+
 @extends('adminlte::page')
 @section('css')
     <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
@@ -11,31 +12,31 @@
                 </a></div>
             <div class="rightSide">
                 <ul class="list">
-                    <a href="{{route('task.fastOrder')}}"><li class="item">Добавить заказ</li></a>
-                    <a href="{{route('customer.orders', $user->id)}}"><li class="item">Мои заказы</li>
+                    <a href="{{route('task.search')}}"><li class="item">Поиск задач</li></a>
+                    <a href="#"><li class="item">Мои работы</li>
                     </a><a href="#">
                         <li class="item">Сообщения</li>
-                    </a><a href="#">
-                        <li class="item btn-item-header">Кабинет исполнителя</li>
+                    </a><a href="{{route('customer.profile', $user->id)}}">
+                        <li class="item btn-item-header">Кабинет заказчика</li>
                     </a></ul>
             </div>
         </div>
     </div>
     <div class="cabinet">
         <div class="container">
-            <div class="content"><p class="title">Личный кабинет заказчика</p>
+            <div class="content"><p class="title">Личный кабинет исполнителя</p>
                 <div class="flex">
                     <div class="leftSide">
                         <div class="personal-area-menu"><p class="name">Привет, {{$user->name}}</p>
                             <ul class="list">
-                                <a href="{{route('task.fastOrder')}}">
-                                    <li class="item">Добавить заказ</li>
-                                </a>
-                                <a href="{{route('customer.orders', $user->id)}}">
-                                    <li class="item">Мои заказы</li>
+                                <a href="{{route('task.search')}}">
+                                    <li class="item">Поиск задач</li>
                                 </a>
                                 <a href="#">
-                                    <li class="item">Списки исполнителей</li>
+                                    <li class="item">Мои работы</li>
+                                </a>
+                                <a href="#">
+                                    <li class="item">Уведомления о задачах</li>
                                 </a><a href="#">
                                     <li class="item">Моя страница</li>
                                 </a><a href="#">
@@ -48,8 +49,8 @@
                                     <li class="item">Партнёрская программа</li>
                                 </a><a href="#">
                                     <li class="item">Служба поддержки</li>
-                                </a><a href="#">
-                                    <li class="item">Кабинет исполнителя</li>
+                                </a><a href="{{route('customer.profile', $user->id)}}">
+                                    <li class="item">Кабинет заказчика</li>
                                 </a></ul>
                         </div>
                         <div class="personal-area-news"><p class="news-title">Новости проекта</p>
@@ -63,7 +64,7 @@
                             <a href="#"><p class="other-news">Другие новости</p></a></div>
                     </div>
                     <div class="rightSide">
-                        <div class="level"><p class="your-level">У вас 0 баллов, ваш уровень заказчика <span>Новичок</span>
+                        <div class="level"><p class="your-level">У вас 0 баллов, ваш уровень исполнителя <span>Новичок</span>
                             </p></div>
                         <div class="personal-area__row">
                             <div class="balance"><p>Ваш баланс</p><span>0 рублей</span>

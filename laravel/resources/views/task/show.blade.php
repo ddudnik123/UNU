@@ -16,7 +16,7 @@
                         <li class="item">Мои заказы</li>
                     </a><a href="#">
                         <li class="item">Сообщения</li>
-                    </a><a href="#">
+                    </a><a href="{{route('executor.dashboard', $user->id)}}">
                         <li class="item btn-item-header">Кабинет исполнителя</li>
                     </a></ul>
             </div>
