@@ -106,28 +106,28 @@
                         <input type="text" name="email" id="email"></label>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strongstyle="color:red !important;">{{ $message }}</strong>
                                     </span>
                     @enderror
                     <label for="name"><p class="email-txt">Введите своё имя</p>
                         <input type="text" name="name" id="name"></label>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                     @enderror
                     <label for="pass"><p class="email-txt">Введите свой пароль</p>
                         <input type="password" name="password" id="pass"></label>
                     @error('password')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                     @enderror
                     <label for="passW"><p class="email-txt">Введите свой пароль ещё раз</p>
                         <input type="password" name="password_confirmation" id="passW"></label>
                     @error('password_confirmation')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                     @enderror
                         <button class="btn-next" type="submit">Далее</button>

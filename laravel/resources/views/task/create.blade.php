@@ -46,7 +46,7 @@
                                         type="text" name="name">
                                     @error('name')
                                     <span class="invalid-feedback error" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </label></li>
@@ -55,7 +55,7 @@
                                         type="text" placeholder="https://" name="link">
                                     @error('link')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </label>
@@ -73,7 +73,7 @@
                                     </textarea>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </label></li>
@@ -84,7 +84,7 @@
                                         name="reportDescription" class="textarea" id="2" cols="30" rows="10"></textarea>
                                     @error('reportDescription')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </label></li>
@@ -96,7 +96,7 @@
                                     меньше значения по тарифу.</p><label><input type="text" name="rate">
                                     @error('rate')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </label> <label

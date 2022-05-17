@@ -26,7 +26,7 @@
                         <input type="text" name="email" id="email">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                         @enderror
                     </label>
@@ -34,7 +34,7 @@
                         <input type="password" name="password" id="pass"></label>
                     @error('password')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color:red !important;">{{ $message }}</strong>
                                     </span>
                     @enderror
                     <button class="btn-next" type="submit"> {{ __('Log in') }}</button>
