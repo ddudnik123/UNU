@@ -92,7 +92,7 @@
             <div class="bottom">
                 <form method="post" action="{{route('register')}}">
                     @csrf
-                    @if ($errors->any())
+  {{--                  @if ($errors->any())
                         <div class="alert alert-danger alert-dismissible">
                             <ul class="list-unstyled">
                                 @foreach($errors->all() as $error)
@@ -101,19 +101,35 @@
 
                             </ul>
                         </div>
-                    @endif
+                    @endif--}}
                     <label for="email"><p class="email-txt">Введите email</p>
                         <input type="text" name="email" id="email"></label>
-
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                     <label for="name"><p class="email-txt">Введите своё имя</p>
                         <input type="text" name="name" id="name"></label>
-
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                     <label for="pass"><p class="email-txt">Введите свой пароль</p>
                         <input type="password" name="password" id="pass"></label>
-
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                     <label for="passW"><p class="email-txt">Введите свой пароль ещё раз</p>
                         <input type="password" name="password_confirmation" id="passW"></label>
-
+                    @error('password_confirmation')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                         <button class="btn-next" type="submit">Далее</button>
                         <p class="offer">Регистрируясь, вы принимаете Договор-оферту</p>
                 </form>

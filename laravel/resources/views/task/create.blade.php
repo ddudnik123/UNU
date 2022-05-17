@@ -23,7 +23,7 @@
     </div>
     <form class="taskAdd" action="{{route('task.store')}}">
         <div class="container">
-           @if ($errors->any())
+<!--           @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible error">
                     <ul class="list-unstyled">
 
@@ -35,7 +35,7 @@
 
                     </ul>
                 </div>
-            @endif
+            @endif-->
 
             <div class="content"><p class="main-title">Создать задачу</p>
                 <div class="taskAdd-wrapper">
@@ -43,10 +43,22 @@
                         <ul class="list">
                             <li class="item"><p class="title">Название задачи</p>
                                 <p class="post-title">Например: «Написать комментарий про тигров»</p><label><input
-                                        type="text" name="name"></label></li>
+                                        type="text" name="name">
+                                    @error('name')
+                                    <span class="invalid-feedback error" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </label></li>
                             <li class="item"><p class="title">Ссылка</p>
                                 <p class="post-title">Ссылка, необходимая для выполнения задания.</p><label><input
-                                        type="text" placeholder="https://" name="link"></label>
+                                        type="text" placeholder="https://" name="link">
+                                    @error('link')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </label>
 <!--                                <label for="task_no_show_link"
                                                                                            style="cursor: pointer;font-size: 14px;">
                                     <input
@@ -56,18 +68,38 @@
                             <li class="item"><p class="title">Задание</p>
                                 <p class="post-title">Подробно и понятно опишите, что и где именно должен сделать
                                     исполнитель</p><label for="1"><textarea class="textarea" id="1"
-                                                                            cols="30" rows="10" name="description"></textarea></label></li>
+                                                                            cols="30" rows="10" name="description">
+
+                                    </textarea>
+                                    @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </label></li>
 
                             <li class="item"><p class="title">Что нужно для отчёта</p>
                                 <p class="post-title">Опишите, что нужно предоставить исполнителю в отчёте.<br>Если требуете
                                     скриншот, обязательно отметьте соответствующую галочку ниже.</p><label for="2"><textarea
-                                        name="reportDescription" class="textarea" id="2" cols="30" rows="10"></textarea></label></li>
+                                        name="reportDescription" class="textarea" id="2" cols="30" rows="10"></textarea>
+                                    @error('reportDescription')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </label></li>
                             <li class="item"><p class="title">Тариф</p><label><select class="select">
                                         <option class="option">-Лайки- 1р</option>
                                     </select></label></li>
                             <li class="item"><p class="title">Тариф</p>
                                 <p class="post-title">Сколько вы готовы платить за 1 выполнение задания. Не может быть
-                                    меньше значения по тарифу.</p><label><input type="text" name="rate"></label> <label
+                                    меньше значения по тарифу.</p><label><input type="text" name="rate">
+                                    @error('rate')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </label> <label
                                     for="task_no_show_link2" style="cursor: pointer;font-size: 14px;">
 
                                     <input type="checkbox" name="task_no_show_link" value="1" id="task_no_show_link2"

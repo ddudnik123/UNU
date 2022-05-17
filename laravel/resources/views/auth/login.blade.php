@@ -11,7 +11,7 @@
             <div class="bottom">
                 <form method="post" action="{{ route('login') }}">
                     @csrf
-                    @if ($errors->any())
+ {{--                   @if ($errors->any())
                         <div class="alert alert-danger alert-dismissible error">
                             <ul class="list-unstyled">
                                 @foreach($errors->all() as $error)
@@ -20,12 +20,23 @@
 
                             </ul>
                         </div>
-                    @endif
+                    @endif--}}
+
                     <label for="email"><p class="email-txt">Введите имя или email</p>
                         <input type="text" name="email" id="email">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                     </label>
                     <label for="pass"><p class="email-txt">Введите свой пароль</p>
                         <input type="password" name="password" id="pass"></label>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                    @enderror
                     <button class="btn-next" type="submit"> {{ __('Log in') }}</button>
                     <p class="offer">Регистрируясь, вы принимаете Договор-оферту</p>
                     <a href="{{route('password.request')}}">Забыли пароль?</a>
