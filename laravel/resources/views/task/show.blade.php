@@ -10,7 +10,7 @@
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo1.svg" alt="#"></div>
                 </a></div>
             <div class="rightSide">
-                <ul class="list"><a href="#">
+                <ul class="list"><a href="{{route('task.fastOrder')}}">
                         <li class="item">Добавить заказ</li>
                     </a><a href="{{route('customer.orders', $user->id)}}">
                         <li class="item">Мои заказы</li>
