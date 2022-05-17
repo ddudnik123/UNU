@@ -31,4 +31,15 @@ class TaskStoreRequest extends FormRequest
             'rate' => "numeric",
         ];
     }
+
+    public function messages()
+    {
+        return [
+          'name.string' => 'Введите название задачи',
+          'link.url' => 'Неверный формат ссылки',
+          'description.string' => 'Введите описание задачи',
+          'reportDescription.string' => 'Заполните поле "Что нужно для отчета"',
+          'rate.numeric' => 'Тариф может быть только числом',
+        ];
+    }
 }
