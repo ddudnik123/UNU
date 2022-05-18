@@ -16,15 +16,9 @@
                         </a>
                     @else
                         <li> {{$user->name}}</li>
-                        <form action="{{ route('logout') }}" method="post">
+                        <li id="logout" style="cursor: pointer">выход</li>
+                        <form action="{{ route('logout') }}" method="post" id="logoutForm">
                             @csrf
-                            <li>
-                                <button class=""
-                                        style="background:rgba(1,1,1,0);  cursor:pointer; color:white; font-size: 1em; border-color:rgba(1,1,1,0);"
-                                        type="submit">
-                                    <span>&nbsp&nbspвыход</span>
-                                </button>
-                            </li>
                         </form>
                     @endif
                 </ul>
@@ -195,4 +189,12 @@
                     данных.
                     Точка №777: 0.002035</p></div>
         </div>
+@endsection
+@section('js')
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+            $( "#logout" ).click(function() {
+            $( "#logoutForm" ).submit();
+            });
+    </script>
 @endsection
