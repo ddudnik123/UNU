@@ -24,19 +24,6 @@
     </div>
     <form class="taskAdd" action="{{route('task.update')}}">
         <div class="container">
-        <!--           @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible error">
-                <ul class="list-unstyled">
-
-@foreach($errors->all() as $error)
-
-                <div class="error"><li><i style="color:red"></i> {{$error}} </li></div>
-
-                        @endforeach
-
-                </ul>
-            </div>
-        @endif-->
 
                 <div class="content"><p class="main-title">Создать задачу</p>
                     <div class="taskAdd-wrapper">
@@ -44,7 +31,7 @@
                             <ul class="list">
                                 <li class="item"><p class="title">Название задачи</p>
                                     <p class="post-title">Например: «Написать комментарий про тигров»</p><label><input
-                                            type="text" name="name" value="{{$task->name}}">
+                                            type="text" name="name" value="{{old('name')??$task->name}}">
                                         @error('name')
                                         <span class="invalid-feedback error" role="alert">
                                         <strong style="color:red !important;">{{ $message }}</strong>
@@ -53,7 +40,7 @@
                                     </label></li>
                                 <li class="item"><p class="title">Ссылка</p>
                                     <p class="post-title">Ссылка, необходимая для выполнения задания.</p><label><input
-                                            type="text" placeholder="https://" name="link" value="{{$task->link}}">
+                                            type="text" placeholder="https://" name="link" value="{{old('link')??$task->link}}">
                                         @error('link')
                                         <span class="invalid-feedback" role="alert">
                                         <strong style="color:red !important;">{{ $message }}</strong>
@@ -69,7 +56,7 @@
                                 <li class="item"><p class="title">Задание</p>
                                     <p class="post-title">Подробно и понятно опишите, что и где именно должен сделать
                                         исполнитель</p><label for="1"><textarea class="textarea" id="1"
-                                                                                cols="30" rows="10" name="description" value="{{$task->description}}">{{$task->description}}
+                                                                                cols="30" rows="10" name="description" value="{{old('description')??$task->description}}">{{old('description')??$task->description}}
                                     </textarea>
                                         @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -81,7 +68,7 @@
                                 <li class="item"><p class="title">Что нужно для отчёта</p>
                                     <p class="post-title">Опишите, что нужно предоставить исполнителю в отчёте.<br>Если требуете
                                         скриншот, обязательно отметьте соответствующую галочку ниже.</p><label for="2"><textarea
-                                            name="reportDescription" class="textarea" id="2" cols="30" rows="10" value="{{$task->reportDescription}}">{{$task->reportDescription}}</textarea>
+                                            name="reportDescription" class="textarea" id="2" cols="30" rows="10" value="{{old('reportDescription')??$task->reportDescription}}">{{old('reportDescription')??$task->reportDescription}}</textarea>
                                         @error('reportDescription')
                                         <span class="invalid-feedback" role="alert">
                                         <strong style="color:red !important;">{{ $message }}</strong>
@@ -93,7 +80,7 @@
                                         </select></label></li>
                                 <li class="item"><p class="title">Тариф</p>
                                     <p class="post-title">Сколько вы готовы платить за 1 выполнение задания. Не может быть
-                                        меньше значения по тарифу.</p><label><input type="text" name="rate" value="{{$task->rate}}">
+                                        меньше значения по тарифу.</p><label><input type="text" name="rate" value="{{old('rate')??$task->rate}}">
                                         @error('rate')
                                         <span class="invalid-feedback" role="alert">
                                         <strong style="color:red !important;">{{ $message }}</strong>
