@@ -31,14 +31,14 @@
                             <div class="cell">Название</div>
                             <div class="cell">Тип</div>
                             <div class="cell">Оплата</div>
-                            <div class="cell">Заказчик</div>
+                            <div class="cell">Статус</div>
                         </div>
                         @foreach($tasks as $task)
                             <li class="item">
                                 <div class="cell"><a href="{{route('task.show', $task->id)}}">{{$task->name}}</a></div>
                                 <div class="cell">{{$task->categorie->name}}</div>
                                 <div class="cell">{{$task->rate}}</div>
-                                <div class="cell"><a href="#">{{$task->customer->name}}</a></div>
+                                <div class="cell">{{$task->status->name}}</div>
                             </li>
                         @endforeach
                     </ul>

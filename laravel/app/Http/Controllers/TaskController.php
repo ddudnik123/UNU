@@ -36,6 +36,7 @@ class TaskController extends Controller
             'click_count' => 0,
             'customer_id' => $uid,
             'categorie_id' => $request->categorie_id,
+            'status_id' => 2,
         ]);
         return redirect()->back();
     }

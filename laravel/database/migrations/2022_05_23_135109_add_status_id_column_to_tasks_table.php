@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->foreignId('status_id');
+            $table->foreignId('status_id')->default(2);
         });
     }
 
