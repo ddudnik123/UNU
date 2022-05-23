@@ -1,6 +1,6 @@
-@extends('adminlte::page')
+@extends('layouts.front')
 @section('css')
-    <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
+
 @endsection
 @section('body')
     <div class="header">

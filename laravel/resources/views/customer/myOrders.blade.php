@@ -1,7 +1,4 @@
-@extends('adminlte::page')
-@section('css')
-    <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
-@endsection
+@extends('layouts.front')
 @section('body')
     <div class="headerAdmin">
         <div class="container">
@@ -24,9 +21,10 @@
     <div class="container">
         <div class="search">
             <div class="content">
-                <div class="top"><p class="title">Поиск задач</p>
-                    <p class="post-title">На этой странице отображаются все доступные вам задания для работы. Чтобы узнать
-                        подробности задания, нажмите на заголовок.</p></div>
+                <div class="top"><p class="title">Мои заказы</p>
+<!--                    <p class="post-title">На этой странице отображаются все доступные вам задания для работы. Чтобы узнать-->
+<!--                        подробности задания, нажмите на заголовок.</p>-->
+                </div>
                 <div class="bottom">
                     <ul class="jobs-list">
                         <div class="top">
