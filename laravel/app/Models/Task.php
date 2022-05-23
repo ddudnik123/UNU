@@ -15,13 +15,20 @@ class Task extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
     public function customer()
     {
-        return $this->belongsTo(User::class,  'customer_id','id');
+        return $this->belongsTo(User::class, 'customer_id', 'id');
     }
+
     public function categorie()
     {
         return $this->belongsTo(Categorie::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 
 }
