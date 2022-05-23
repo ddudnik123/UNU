@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExecutorController;
@@ -24,6 +25,12 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::middleware(['auth', 'verified'])->get('work', [HomeController::class, 'work'])->name('work');
+/*Route::middleware(['admin'])->get('/admin', [AdminController::class, 'index'])->name('admin.index');*/
+
+
+Route::middleware(['admin'])->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+});
 
 
 Route::middleware(['auth', 'verified'])->prefix('customer')->group(function () {

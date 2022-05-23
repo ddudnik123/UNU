@@ -26,17 +26,17 @@ class CategoriesSeeder extends Seeder
             'im_url' => 'https://unu.im/i/rotation.svg',
         ]);
         Categorie::create([
-            'name' => 'Лайки, репосты,',
+            'name' => 'Лайки, репосты',
             'description' => ' голосование, активность',
             'im_url' => 'https://unu.im/i/like2.svg',
         ]);
         Categorie::create([
-            'name' => 'Лайки, репосты,',
+            'name' => 'Лайки, репосты',
             'description' => ' голосование, активность',
             'im_url' => 'https://unu.im/i/like2.svg',
         ]);
         Categorie::create([
-            'name' => 'Лайки, репосты,',
+            'name' => 'Лайки, репосты',
             'description' => ' голосование, активность',
             'im_url' => 'https://unu.im/i/like2.svg',
         ]);
