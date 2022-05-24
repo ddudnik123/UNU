@@ -29,8 +29,9 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/orders-all', [AdminController::class, 'ordersAll'])->name('admin.ordersAll');
     Route::get('/order/{task}', [OrderController::class, 'index'])->name('admin.orderShow');
-    Route::get('/approve/{task}', [OrderController::class, 'approve'])->name('admin.taskApprove');
+    Route::post('/approve/{task}', [OrderController::class, 'approve'])->name('admin.taskApprove');
     Route::get('/edit/{task}', [OrderController::class, 'edit'])->name('admin.taskEdit');
+    Route::post('/block/{task}', [OrderController::class, 'block'])->name('admin.taskBlock');
 
 });
 
@@ -51,10 +52,10 @@ Route::middleware(['auth', 'verified'])->prefix('executor')->group(function () {
 Route::middleware(['auth', 'verified'])->prefix('task')->group(function () {
     Route::get('fast-order', [TaskController::class, 'fastOrder'])->name('task.fastOrder');
     Route::get('create/{categorie}', [TaskController::class, 'create'])->name('task.create');
-    Route::get('store', [TaskController::class, 'store'])->name('task.store');
+    Route::post('store', [TaskController::class, 'store'])->name('task.store');
     Route::get('search', [TaskController::class, 'search'])->name('task.search');
     Route::get('show/{task}', [TaskController::class, 'show'])->name('task.show');
-    Route::get('update', [TaskController::class, 'update'])->name('task.update');
+    Route::put('update', [TaskController::class, 'update'])->name('task.update');
 });
 
 Route::get('/', [HomeController::class, 'index']);

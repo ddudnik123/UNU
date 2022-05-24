@@ -18,7 +18,8 @@
             </div>
         </div>
     </div>
-    <form class="taskAdd" action="{{route('task.store')}}">
+    <form class="taskAdd" action="{{route('task.store')}}" method="post">
+        @csrf
         <div class="container">
             <div class="content"><p class="main-title">Создать задачу</p>
                 <div class="taskAdd-wrapper">

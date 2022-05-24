@@ -17,6 +17,11 @@ class OrderController extends Controller
         $task->update(['status_id' => 3]);
         return redirect()->back();
     }
+    public function block(Task $task)
+    {
+        $task->update(['status_id' => 1]);
+        return redirect()->back();
+    }
     public function edit(Task $task)
     {
         return view('admin.taskEdit', compact('task'));

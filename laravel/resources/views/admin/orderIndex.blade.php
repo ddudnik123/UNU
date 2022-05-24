@@ -42,12 +42,18 @@
                                 </div>
                             </li>
                         </ul>
-                    <form action="{{route("admin.taskApprove", $task->id)}}">
+                    <form action="{{route("admin.taskApprove", $task->id)}}" method="post">
+                        @csrf
                         <button type="submit" class="btn-create btn-primary">Одобрить</button>
                     </form>
 
                     <form action="{{route("admin.taskEdit", $task->id)}}">
                         <button type="submit" class="btn-create btn-primary">Изменить</button>
+                    </form>
+
+                    <form action="{{route("admin.taskBlock", $task->id)}}" method="post">
+                        @csrf
+                        <button type="submit" class="btn-create btn-primary">Блокировать</button>
                     </form>
                     </div>
 
