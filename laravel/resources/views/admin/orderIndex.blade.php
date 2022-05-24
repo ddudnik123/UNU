@@ -42,8 +42,9 @@
                                 </div>
                             </li>
                         </ul>
-
-                        <a href="#" class="btn-create btn-primary">Одобрить</a>
+                    <form action="{{route("admin.taskApprove", $task->id)}}">
+                        <button type="submit" class="btn-create btn-primary">Одобрить</button>
+                    </form>
                     </div>
 
                 </div>

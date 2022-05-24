@@ -44,7 +44,7 @@ class TaskController extends Controller
     public function search()
     {
         $user = Auth::user();
-        $tasks = Task::all();
+        $tasks = Task::where('status_id',3)->get();
         return view('task.search', compact('tasks', 'user'));
     }
 

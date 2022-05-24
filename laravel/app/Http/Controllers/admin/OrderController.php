@@ -12,4 +12,9 @@ class OrderController extends Controller
     {
         return view('admin.orderIndex', compact('task'));
     }
+    public function approve(Task $task)
+    {
+        $task->update(['status_id' => 3]);
+        return redirect()->back();
+    }
 }
