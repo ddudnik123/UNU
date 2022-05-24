@@ -45,6 +45,10 @@
                     <form action="{{route("admin.taskApprove", $task->id)}}">
                         <button type="submit" class="btn-create btn-primary">Одобрить</button>
                     </form>
+
+                    <form action="{{route("admin.taskEdit", $task->id)}}">
+                        <button type="submit" class="btn-create btn-primary">Изменить</button>
+                    </form>
                     </div>
 
                 </div>

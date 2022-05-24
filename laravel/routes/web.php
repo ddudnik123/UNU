@@ -30,6 +30,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/orders-all', [AdminController::class, 'ordersAll'])->name('admin.ordersAll');
     Route::get('/order/{task}', [OrderController::class, 'index'])->name('admin.orderShow');
     Route::get('/approve/{task}', [OrderController::class, 'approve'])->name('admin.taskApprove');
+    Route::get('/edit/{task}', [OrderController::class, 'edit'])->name('admin.taskEdit');
 
 });
 
