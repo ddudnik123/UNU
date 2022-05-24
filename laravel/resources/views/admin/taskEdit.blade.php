@@ -4,7 +4,9 @@
 @endsection
 @section('content')
 
-<form class="taskAdd" action="{{route('task.update')}}">
+<form class="taskAdd" action="{{route('task.update')}}" method="post">
+    @csrf
+    {{method_field('put')}}
     <div class="container">
 
         <div class="content"><p class="main-title">Изменить заказ</p>
