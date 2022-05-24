@@ -1,16 +1,13 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExecutorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
-use App\Http\Controllers\UserController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +27,9 @@ Route::middleware(['auth', 'verified'])->get('work', [HomeController::class, 'wo
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/orders-all', [AdminController::class, 'ordersAll'])->name('admin.ordersAll');
+    Route::get('/order/{task}', [OrderController::class, 'index'])->name('admin.orderShow');
+
 });
 
 

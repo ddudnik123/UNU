@@ -226,18 +226,49 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+/*        [
             'type'         => 'navbar-search',
             'text'         => 'search',
             'topnav_right' => true,
-        ],
+        ],*/
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
+
         // Sidebar items:
         [
+            'text'    => 'Заказы',
+            'icon'    => 'far fa-fw fa-file',
+            'submenu' => [
+
+                [
+                    'text' => 'все',
+                    //'url'  => route('admin.ordersAll'),
+                    'url'  => '/admin/orders-all',
+                ],
+                [
+                    'text' => 'на рассмотрение',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'в работе',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'завершенные',
+                    'url'  => '#',
+                ],
+                ],
+            ],
+
+
+
+
+
+
+/*        [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
@@ -317,7 +348,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*
