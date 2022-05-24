@@ -1,4 +1,4 @@
-<?php
+<?phproute('login');
 
 namespace Database\Seeders;
 

@@ -31,6 +31,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/order/{task}', [OrderController::class, 'index'])->name('admin.orderShow');
     Route::post('/approve/{task}', [OrderController::class, 'approve'])->name('admin.taskApprove');
     Route::get('/edit/{task}', [OrderController::class, 'edit'])->name('admin.taskEdit');
+    Route::put('/task-update', [OrderController::class, 'update'])->name('admin.taskUpdate');
     Route::post('/block/{task}', [OrderController::class, 'block'])->name('admin.taskBlock');
 
 });

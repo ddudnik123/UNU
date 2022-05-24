@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<form class="taskAdd" action="{{route('task.update')}}" method="post">
+<form class="taskAdd" action="{{route('admin.taskUpdate')}}" method="post">
     @csrf
     {{method_field('put')}}
     <div class="container">
