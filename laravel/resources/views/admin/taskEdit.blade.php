@@ -32,8 +32,8 @@
                                 @enderror
                             </label>
                            <li class="item"><p class="title">Задание</p>
-                   <label for="1"><textarea class="textarea" id="1" cols="30" rows="10" name="description" value="{{old('description')??$task->description}}">{{old('description')??$task->description}}
-                       </textarea>
+                   <label for="1">
+                       <textarea class="textarea" id="1" cols="30" rows="10" name="description" value="{{old('description')??$task->description}}">{{old('description')??$task->description}}</textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                         <strong style="color:red !important;">{{ $message }}</strong>
