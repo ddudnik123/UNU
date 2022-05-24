@@ -7,22 +7,22 @@
         <thead>
         <tr>
             <th style="width: 10%">id</th>
-            <th style="width: 20%">Заказчик</th>
+            <th style="width: 30%">Заказчик</th>
             <th style="width: 30%">Описание</th>
             <th style="width: 10%">Цена</th>
             <th style="width: 20%">Статус</th>
-            <th style="width: 10%">Действия</th>
+
         </tr>
         </thead>
         <tbody>
         @foreach($tasks as $task)
-            <tr>
+            <tr onclick="window.location='{{route('admin.orderShow', $task->id)}}';" style="cursor: pointer; cursor: hand;">
                 <td>{{$task->id}}</td>
                 <td>{{$task->customer->name}}</td>
                 <td>{{$task->name}}</td>
                 <td>{{$task->rate}}</td>
                 <td>{{$task->status->name}}</td>
-                <td>
+<!--                <td>
                     <form class='card-title' method=get
                           action="{{route('admin.orderShow', $task->id)}}" style="margin:2px;">
                         @csrf
@@ -31,7 +31,7 @@
                         </button>
                     </form>
 
-                </td>
+                </td>-->
             </tr>
         @endforeach
 
