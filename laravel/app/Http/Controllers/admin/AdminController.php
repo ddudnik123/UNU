@@ -20,4 +20,28 @@ class AdminController extends Controller
         return view('admin.orders', compact('tasks'));
     }
 
+    public function ordersConsideration()
+    {
+        $tasks = Task::where('status_id', 2)->get();
+        return view('admin.orders', compact('tasks'));
+    }
+
+    public function ordersInProgress()
+    {
+        $tasks = Task::where('status_id', 3)->get();
+        return view('admin.orders', compact('tasks'));
+    }
+
+    public function ordersBlocked()
+    {
+        $tasks = Task::where('status_id', 1)->get();
+        return view('admin.orders', compact('tasks'));
+    }
+
+    public function ordersFinished()
+    {
+        $tasks = Task::where('status_id', 4)->get();
+        return view('admin.orders', compact('tasks'));
+    }
+
 }

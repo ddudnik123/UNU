@@ -28,6 +28,10 @@ Route::middleware(['auth', 'verified'])->get('work', [HomeController::class, 'wo
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/orders-all', [AdminController::class, 'ordersAll'])->name('admin.ordersAll');
+    Route::get('/orders-consideration', [AdminController::class, 'ordersConsideration'])->name('admin.ordersConsideration');
+    Route::get('/orders-in-progress', [AdminController::class, 'ordersInProgress'])->name('admin.ordersInProgress');
+    Route::get('/orders-blocked', [AdminController::class, 'ordersBlocked'])->name('admin.ordersBlocked');
+    Route::get('/orders-finished', [AdminController::class, 'ordersFinished'])->name('admin.ordersFinished');
     Route::get('/order/{task}', [OrderController::class, 'index'])->name('admin.orderShow');
     Route::post('/approve/{task}', [OrderController::class, 'approve'])->name('admin.taskApprove');
     Route::get('/edit/{task}', [OrderController::class, 'edit'])->name('admin.taskEdit');

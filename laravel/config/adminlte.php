@@ -250,15 +250,19 @@ return [
                 ],
                 [
                     'text' => 'на рассмотрение',
-                    'url'  => '#',
+                    'url'  => '/admin/orders-consideration',
                 ],
                 [
                     'text' => 'в работе',
-                    'url'  => '#',
+                    'url'  => '/admin/orders-in-progress',
                 ],
                 [
-                    'text' => 'завершенные',
-                    'url'  => '#',
+                    'text' => 'отклоненные',
+                    'url'  => '/admin/orders-blocked',
+                ],
+                [
+                    'text' => 'выполненные',
+                    'url'  => '/admin/orders-finished',
                 ],
                 ],
             ],
