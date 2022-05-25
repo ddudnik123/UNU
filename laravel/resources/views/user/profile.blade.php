@@ -34,7 +34,7 @@
                             <ul class="table">
                                 <li class="item">
                                     <div class="leftSide">На сайте:</div>
-                                    <div class="rightSide">c {{$user->created_at}}</div>
+                                    <div class="rightSide">зарегестрирован {{$created}}</div>
                                 </li>
                                 <li class="item">
                                     <div class="leftSide">Был онлайн:</div>
