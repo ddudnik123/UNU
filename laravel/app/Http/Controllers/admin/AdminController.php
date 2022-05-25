@@ -17,6 +17,7 @@ class AdminController extends Controller
     public function ordersAll()
     {
         $tasks = Task::all();
-        return view('admin.ordersAll', compact('tasks'));
+        return view('admin.orders', compact('tasks'));
     }
+
 }

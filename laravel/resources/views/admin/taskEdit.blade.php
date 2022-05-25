@@ -67,7 +67,7 @@
                                        placeholder=""> Требовать от исполнителя скриншот (+1 руб)</label></li>
                     </ul>
                     <a href="#">
-                        <button class="btn-create" type="submit">Изменить</button>
+                        <button class="btn-create" type="submit" onclick="history.go(-2);">Изменить</button>
                     </a></div>
                 <input type="hidden" name="categorie_id" value="{{$task->categorie->id}}">
                 <input type="hidden" name="task_id" value="{{$task->id}}">

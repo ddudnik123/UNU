@@ -39,3 +39,9 @@
         </tbody>
     </table>
 @endsection
+@section('js')
+    <script>
+    window.onload=UPDATE();
+    </script>
+
+@endsection

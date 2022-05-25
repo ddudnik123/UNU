@@ -21,7 +21,8 @@
                 </ul>
             </div>
             <div class="content">
-                <div class="leftSide"><img class="logo" src="https://unu.im/i/unu_symbol.svg" alt="#">
+                <div class="leftSide">
+                    <img class="logo" src="https://unu.im/i/unu_symbol.svg" alt="#">
                     <div class="bottom"><h1 class="title">
                             Заработок на выполнении<br>заданий в интернете</h1>
                         <p class="txt">Зарабатывайте, выполняя простые задания: написание комментариев, общение на форумах, продвижение в соц. сетях.</p>

@@ -44,7 +44,7 @@
                         </ul>
                     <form action="{{route("admin.taskApprove", $task->id)}}" method="post">
                         @csrf
-                        <button type="submit" class="btn-create btn-primary">Одобрить</button>
+                        <button type="submit" class="btn-create btn-primary" >Одобрить</button>
                     </form>
 
                     <form action="{{route("admin.taskEdit", $task->id)}}">
