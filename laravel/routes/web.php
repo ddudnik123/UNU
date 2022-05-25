@@ -22,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::middleware(['auth', 'verified'])->get('work', [HomeController::class, 'work'])->name('work');
+Route::middleware(['auth', 'verified', 'lastSeen'])->get('work', [HomeController::class, 'work'])->name('work');
 /*Route::middleware(['admin'])->get('/admin', [AdminController::class, 'index'])->name('admin.index');*/
 
 
-Route::middleware(['admin'])->prefix('admin')->group(function () {
+Route::middleware(['admin', 'lastSeen'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/orders-all', [AdminController::class, 'ordersAll'])->name('admin.ordersAll');
     Route::get('/orders-consideration', [AdminController::class, 'ordersConsideration'])->name('admin.ordersConsideration');
@@ -42,20 +42,20 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
 });
 
 
-Route::middleware(['auth', 'verified'])->prefix('customer')->group(function () {
+Route::middleware(['auth', 'verified', 'lastSeen'])->prefix('customer')->group(function () {
     //Route::get('create', [UserController::class, 'index'])->name('customer.index');
     Route::get('dashboard', [CustomerController::class, 'dashboard'])->name('customer.profile');
     Route::get('orders/{user}', [CustomerController::class, 'orders'])->name('customer.orders');
 });
 
-Route::middleware(['auth', 'verified'])->prefix('executor')->group(function () {
+Route::middleware(['auth', 'verified', 'lastSeen'])->prefix('executor')->group(function () {
     //Route::get('create', [UserController::class, 'index'])->name('customer.index');
     Route::get('dashboard', [ExecutorController::class, 'dashboard'])->name('executor.dashboard');
     //Route::get('orders/{user}', [CustomerController::class, 'orders'])->name('customer.orders');
 });
 
 
-Route::middleware(['auth', 'verified'])->prefix('task')->group(function () {
+Route::middleware(['auth', 'verified', 'lastSeen'])->prefix('task')->group(function () {
     Route::get('fast-order', [TaskController::class, 'fastOrder'])->name('task.fastOrder');
     Route::get('create/{categorie}', [TaskController::class, 'create'])->name('task.create');
     Route::post('store', [TaskController::class, 'store'])->name('task.store');
@@ -64,7 +64,7 @@ Route::middleware(['auth', 'verified'])->prefix('task')->group(function () {
     Route::put('update', [TaskController::class, 'update'])->name('task.update');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified', 'lastSeen'])->group(function () {
     Route::get('profile{user}', [UserController::class, 'profile'])->name('user.profile');
 });
 

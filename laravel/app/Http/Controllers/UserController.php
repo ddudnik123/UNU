@@ -13,7 +13,8 @@ public function profile(User $user)
 {
     Carbon::setlocale(config('app.locale'));
     $created = Carbon::parse($user->created_at)->diffForHumans();
-    return view('user.profile', compact('user', 'created'));
+    $lastSeen = Carbon::parse($user->last_seen)->diffForHumans();
+    return view('user.profile', compact('user', 'created', 'lastSeen'));
 }
 
 }

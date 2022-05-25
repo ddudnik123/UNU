@@ -38,7 +38,15 @@
                                 </li>
                                 <li class="item">
                                     <div class="leftSide">Был онлайн:</div>
-                                    <div class="rightSide">Сейчас на сайте</div>
+                                    <div class="rightSide">
+                                        @if(Cache::has('is_online' . $user->id))
+                                            <span class="text-success">Онлайн</span>
+                                        @else
+                                            <span class="text-secondary">{{$lastSeen}}</span>
+                                        @endif
+
+
+                                    </div>
                                 </li>
                                 <li class="item">
                                     <div class="leftSide">Выполнено заданий:</div>
