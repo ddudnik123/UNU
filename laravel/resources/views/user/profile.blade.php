@@ -2,14 +2,14 @@
 @section('body')
     <div class="headerAdmin">
         <div class="container">
-            <div class="leftSide"><a href="/">
+            <div class="leftSide">
+                <a href="/">
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo1.svg" alt="#"></div>
                 </a></div>
             <div class="rightSide">
-                <ul class="list"><a href="{{route('task.fastOrder')}}">
-                        <li class="item">Добавить заказ</li>
-                    </a><a href="{{route('customer.orders', $user->id)}}">
-                        <li class="item">Мои заказы</li>
+                <ul class="list">
+                    <a href="{{route('task.fastOrder')}}"><li class="item">Добавить заказ</li></a>
+                    <a href="{{route('customer.orders', $user->id)}}"><li class="item">Мои заказы</li>
                     </a><a href="#">
                         <li class="item">Сообщения</li>
                     </a><a href="{{route('executor.dashboard', $user->id)}}">
@@ -18,29 +18,48 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="search">
+
+    <div class="usr">
+        <div class="container"><p class="title">Профиль {{$user->name}}</p>
             <div class="content">
-                <div class="top"><p class="title">Поиск задач</p>
-                    <p class="post-title">На этой странице отображаются все доступные вам задания для работы. Чтобы узнать
-                        подробности задания, нажмите на заголовок.</p></div>
-                <div class="bottom">
-                    <ul class="jobs-list">
-                        <div class="top">
-                            <div class="cell">Название</div>
-                            <div class="cell">Тип</div>
-                            <div class="cell">Оплата</div>
-                            <div class="cell">Заказчик</div>
+                <div class="leftSide">
+                    <div class="usrCard">
+                        <div class="leftSide">
+                            <div class="imgWrapp"><img src="https://unu.im/i/avatar-male.svg" alt="#"></div>
+                            @if(Auth::user()->id == $user->id)
+                            <div class="bottom"><a href="#"><p>Настройки аккаунта</p></a></div>
+                            @endif
                         </div>
-                        @foreach($tasks as $task)
-                        <li class="item">
-                            <div class="cell">{{$task->name}}</div>
-                            <div class="cell">{{$task->categorie->name}}</div>
-                            <div class="cell">{{$task->rate}}</div>
-                            <div class="cell"><a href="{{route('user.profile', $task->customer->id)}}">{{$task->customer->name}}</a></div>
-                        </li>
-                        @endforeach
-                    </ul>
+                        <div class="rightSide">
+                            <ul class="table">
+                                <li class="item">
+                                    <div class="leftSide">На сайте:</div>
+                                    <div class="rightSide">c {{$user->created_at}}</div>
+                                </li>
+                                <li class="item">
+                                    <div class="leftSide">Был онлайн:</div>
+                                    <div class="rightSide">Сейчас на сайте</div>
+                                </li>
+                                <li class="item">
+                                    <div class="leftSide">Выполнено заданий:</div>
+                                    <div class="rightSide">0</div>
+                                </li>
+                                <li class="item">
+                                    <div class="leftSide">Заданий в работе:</div>
+                                    <div class="rightSide">0</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightSide">
+                    <div class="emailNot">Email
+                        @if($user->email_verified_at)
+                            подтверждён
+                        @else
+                            не подтверждён
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,8 +70,7 @@
                 <div class="leftSide">
                     <div class="logoWrapper"><img src="https://unu.im/i/unu-logo3-1.svg" alt="#"></div>
                     <div class="lists">
-                        <ul class="list">
-                            <a href="{{route('customer.profile')}}">
+                        <ul class="list"><a href="#">
                                 <li class="item">Мой кабинет</li>
                             </a><a href="#">
                                 <li class="item">Контакты</li>

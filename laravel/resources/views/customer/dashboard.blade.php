@@ -33,7 +33,7 @@
                                 </a>
                                 <a href="#">
                                     <li class="item">Списки исполнителей</li>
-                                </a><a href="#">
+                                </a><a href="{{route('user.profile', $user->id)}}">
                                     <li class="item">Моя страница</li>
                                 </a><a href="#">
                                     <li class="item">Сообщения</li>
